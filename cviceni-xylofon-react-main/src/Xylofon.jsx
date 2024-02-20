@@ -18,8 +18,15 @@ export const Xylofon = () => {
 		<>
 			<h1>{nadpis}</h1>
 			<div className="xylofon">
-				{kameny.map(k => <button type="button" key={k} className="kamen" onClick={() => zahraj(k)} onMouseOver={() => setNadpis(k)} onMouseLeave={()=> setNadpis('Xylofon')}>{k}
-				</button>)}
+				{kameny.map(k => <button type="button" 
+										 key={k} 
+										 className="kamen" 
+										 onClick={(event) => {const ton = event.target.textContent
+															 setNadpis(ton)
+															 zahraj(ton)} 
+												 }>{k}
+								 </button>)
+				}
 			</div>
 		</>
 	)
